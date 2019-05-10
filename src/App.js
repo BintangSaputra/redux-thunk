@@ -1,12 +1,16 @@
 import React from "react";
 import "./App.css";
 import Form from "./components/form";
+import List from "./components/list";
+import { Provider } from "react-redux";
+import store from "./store";
 
 function App() {
   return (
-    <div>
+    <Provider store={store}>
       <Form />
-    </div>
+      <List />
+    </Provider>
   );
 }
 

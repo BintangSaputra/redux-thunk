@@ -7,21 +7,20 @@ class Form extends Component {
       description: "",
       input: []
     };
-
-    handleOnChange = event => {
-      this.setState({
-        [event.target.name]: event.target.value
-      });
-    };
-
-    handleOnSubmit = () => {
-      const Data = {
-        input: this.state.description
-      };
-
-      this.setState({ input: this.state.input.concat(Data) });
-    };
   }
+  handleOnChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+  handleOnSubmit = () => {
+    const Data = {
+      description: this.state.description
+    };
+
+    this.setState({ input: this.state.input.concat(Data) });
+    console.log(this.state);
+  };
   render() {
     return (
       <div>
@@ -31,7 +30,7 @@ class Form extends Component {
           name="description"
           onChange={this.handleOnChange}
         />
-        <button onClick={handleOnSubmit}>Submit</button>
+        <button onClick={this.handleOnSubmit}>Submit</button>
       </div>
     );
   }
